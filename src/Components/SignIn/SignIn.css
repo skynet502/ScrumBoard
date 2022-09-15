@@ -1,0 +1,37 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input[type=text],
+input[type=password],
+input[type=email],
+label{
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    outline:none;
+    font-weight:600 ;
+}
+
+button{
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+    border: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 800s;
+}
+button:hover{
+    background-color: white;
+    color: rgb(102, 14, 185);
+    border:1px solid rgb(141, 35, 240) ;
+}
+
+a{
+    color: blueviolet;
+}

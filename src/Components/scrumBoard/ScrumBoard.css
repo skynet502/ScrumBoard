@@ -1,0 +1,102 @@
+.add{
+    margin-top: 50px;
+    margin-left: 65px;
+}
+#info{
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav{
+    background-color: rgb(16,16,90);
+    color: #eee;
+    display: flex;
+    padding: 20px 10px;
+    justify-content: space-between;
+}
+.var{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#task{
+    padding: 5px;
+    font-weight: 500;
+    box-shadow: 1px 2px 2px gray;
+    color: rgb(16,16,90);
+}
+.scrumboard{
+    position: relative;
+}
+.box{
+
+    width:270px;
+    height: 320px;
+    box-shadow: 2px 4px 6px gray;
+}
+.box h2{
+    background-color: grey;
+    margin-top: 0px;
+    padding: 5px;
+    text-align: center;
+    width: 243px;
+    margin: 0 -10px;
+}
+#modal{
+    border-radius: 10px;
+    box-shadow: 2px 4px 6px gray;
+    position: absolute;
+    margin-left: 520px;
+    margin-top: -300px;background-color: rgb(0, 140, 255);
+    animation: blurIn 0.5s linear 1;
+    z-index: 2;
+}
+.hidden{
+    display: none;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+input{
+    display: block;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 60%;
+    font-size: 15px;
+}
+.confirm{
+    width: 100px;
+    color: #fff;
+    background: blue;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.close{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+    #modal{
+       
+        margin-left: 70px;
+        margin-top: -200px;
+    }
+}
