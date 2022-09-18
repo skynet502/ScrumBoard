@@ -1,12 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { images } from '../../Constants'
+import NavBar from '../nav/Navbar'
 import './SignIn.css'
 
 const SignIn = () => {
   return (
     <div className='signIn'>
-        <h2>Have an Account already ?</h2>
-        <h3>Sign in here</h3>
+        <NavBar />
+        <div className='signinImage'>
+            <video autoPlay muted src={images.business} type='video/mp4'></video>
+        </div>
+    <div className='form'>
+    <h2 className='title'>Have an Account already ?</h2>
+        <h3 className='sub-title'>Sign in here</h3>
 
         <form>
             <label for='email'>Email</label>
@@ -18,7 +25,9 @@ const SignIn = () => {
 
                 <Link to='/scrumboard'><button>SIGN IN</button></Link>
         </form>
-        <p>Don't have an account ? <Link to='/signup'>sign up</Link></p>
+        <p className='p-tag'>Don't have an account ? <Link to='/signup'>sign up</Link></p>
+    </div>
+
     </div>
   )
 }
