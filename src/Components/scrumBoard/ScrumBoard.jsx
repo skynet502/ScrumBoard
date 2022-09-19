@@ -3,6 +3,7 @@ import Data from '../../static/data'
 import formInput from '../../static/formData'
 import './ScrumBoard.css'
 import NavBar from './../nav copy/Navbar';
+import MyTasks from '../Tasks/MyTasks';
 
 export class ScrumBoard extends Component {
 
@@ -57,17 +58,9 @@ export class ScrumBoard extends Component {
             </div>
         </nav>
 
-        <p id='info'>Hello {formInput.inputs.fullname}, Welcome to your scrumboard</p>
+        <p id='info'>Hello {Data.fullname}, Welcome to your scrumboard</p>
 
-        <div className='container'>
-            <div className='weekly box'>
-                <h3>Weekly Task</h3>
-                <p id='box'>{this.state.tasks}</p>
-            </div>
-            <div className='daily box'>
-                <h3>Daily Target</h3>
-            </div>
-        </div>
+        <MyTasks />
 
         <div id='modal' className={this.state.isOpen ? "show" : "hidden"}>
             <div className='header'>

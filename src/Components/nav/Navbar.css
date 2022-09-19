@@ -60,7 +60,7 @@
   }
   
   .app__navbar-links li a {
-    color: rgb(6, 6, 177);
+    color: rgb(6, 6, 177) !important;
     text-decoration: none;
     flex-direction: column;
     text-transform: uppercase;

@@ -18,7 +18,7 @@ const NavBar = () => {
 
      className='app__navbar'>
         <a href='/' className='app__navbar-logo'>
-            <h3 style={{fontWeight:900, fontSize:'1.5rem', color:'white'}}>CHATSCRUM</h3>
+            <h3 style={{fontWeight:900, fontSize:'1.5rem', color:'blueViolet'}}>CHATSCRUM</h3>
         </a>
         <ul className='app__navbar-links'>
             {
