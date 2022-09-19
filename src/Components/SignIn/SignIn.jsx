@@ -12,7 +12,6 @@ const SignIn = () => {
             <video autoPlay muted src={images.business} type='video/mp4'></video>
         </div>
     <div className='form'>
-    <h2 className='title'>Have an Account already ?</h2>
         <h3 className='sub-title'>Sign in here</h3>
 
         <form>

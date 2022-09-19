@@ -73,7 +73,7 @@
   }
   
   .app__navbar-links li a:hover {
-    color: var(--secondary-color);
+    color: white !important;
     background-color: blueviolet;
     padding: 10px;
     border-radius: 5px;

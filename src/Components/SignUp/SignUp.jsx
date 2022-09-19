@@ -36,7 +36,6 @@ const SignUp = () => {
         <img className='signupImg' src={images.professional} />
     </div>
     <div className='form'>
-    <h2 className='title'>Don't have an account yet ?</h2>
         <h3 className='sub-title'>Sign up here</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
                 {formInput.inputs.map((input,key)=>{
