@@ -15,8 +15,7 @@ export class Users extends Component {
 
 
   render() {
-    return 
-    (
+    return (
       <div>Users</div>
     )
   }
