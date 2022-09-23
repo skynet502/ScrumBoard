@@ -18,7 +18,7 @@ const NavBar = () => {
 
      className='app__navbar'>
         <a href='/' className='app__navbar-logo'>
-            <h3 style={{fontWeight:900, fontSize:'1.5rem', color:'blueViolet'}}>CHATSCRUM</h3>
+            <h3 style={{fontWeight:900, fontSize:'1.5rem', color:'blueViolet',margin:'auto'}}>CHATSCRUM</h3>
         </a>
         <ul className='app__navbar-links'>
             {
@@ -30,9 +30,9 @@ const NavBar = () => {
                  ))
              }
         </ul>
-        <div className='var'>
-                <p className='user'>User Type : {Data.usertype}</p>
-                <p className='user'>Project Name : { Data.projectname}</p>
+        <div style={{display:"flex"}} className='var'>
+                <p className='User'>User Type : <p className='usertype'>{Data.usertype}</p> </p>
+                <p className='User'>Project Name : <p className='usertype'> { Data.projectname}</p></p>
         </div>
         
         <div className='app__navbar-menu'>

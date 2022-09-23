@@ -65,11 +65,12 @@ const MyTasks = ({data, deleteTask}) => {
               
               <div className='weekly box' 
                  {...provided.droppableProps}
-                    // style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'white' }}
+                    // style={{ backgroundColor: snapshot.isDraggingOver ? 'Blue-color' : 'white' }}
                      ref={provided.innerRef}>
 
-                    <h3>Weekly Task</h3>
-                    {data.map(({id, content},index)=>{
+                    <h3 style={{backgroundColor:'BlueViolet', color:'white',padding:'1rem', borderRadius:'10px'}}>Weekly Task</h3>
+                    <div className='scroll'>
+                    {data.map(({id, name, time_created, scrumgoalhistory_set},index)=>{
                         return(
                             <Draggable key={id} draggableId={`${id}`} index={index}>
                             {(provided)=>(
@@ -77,9 +78,17 @@ const MyTasks = ({data, deleteTask}) => {
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps} 
                                 ref={provided.innerRef}>
-                                <p className='task' style={{position:'relative', zIndex:'5'}} onClick={()=>{deleteTask(id)}}>
-                                    {content}
-                                </p>
+                                <div className='task' style={{position:'relative', zIndex:'5'}} onClick={()=>{deleteTask(id)}}>
+                                    {name}
+                                    <div id='time'>time_created.slice(0,10) at {time_created.slice(12,16)}</div>
+                                    <div className='Blue-color'>
+                                        {scrumgoalhistory_set.map(({id, done_by})=>{
+                                            return(
+                                                <p key={id}>{done_by}</p>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
                                
                                 
                                 </div>
@@ -88,7 +97,7 @@ const MyTasks = ({data, deleteTask}) => {
                         )
                         
                     })}
-               
+                    </div>               
                 {provided.placeholder}  
                 </div>
                 
@@ -100,10 +109,11 @@ const MyTasks = ({data, deleteTask}) => {
                 
                 <div className='daily box' 
                 {...provided.droppableProps}
-                // style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'white' }}
+                // style={{ backgroundColor: snapshot.isDraggingOver ? 'Blue-color' : 'white' }}
                  ref={provided.innerRef} >
-                    <h3>Daily Task</h3>
-                    {dailyTasks.map(({id, content},index)=>{
+                    <h3 style={{backgroundColor:'BlueViolet', color:'white',padding:'1rem',borderRadius:'10px'}}>Daily Task</h3>
+                    <div className='scroll'>
+                    {dailyTasks.map(({id, name, time_created, scrumgoalhistory_set},index)=>{
                         return(
                             <Draggable key={id} draggableId={`${id}`} index={index}>
                             {(provided)=>(
@@ -111,16 +121,24 @@ const MyTasks = ({data, deleteTask}) => {
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps} 
                                 ref={provided.innerRef}>
-                                <p className='task' >
-                                    {content}
-                                </p>
+                                <div className='task' style={{position:'relative', zIndex:'5'}} onClick={()=>{deleteTask(id)}}>
+                                    {name}
+                                    <div id='time'>time_created.slice(0,10) at {time_created.slice(12,16)}</div>
+                                    <div className='Blue-color'>
+                                        {scrumgoalhistory_set.map(({id, done_by})=>{
+                                            return(
+                                                <p key={id}>{done_by}</p>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
                                 </div>
                             )}
                             </Draggable>
                         )
                         
                     })}
-               
+                    </div>
                 {provided.placeholder}  
             </div>
             )}

@@ -60,7 +60,7 @@
   }
   
   .app__navbar-links li a {
-    color: white;
+    color: white !important;
     text-decoration: none;
     flex-direction: column;
     text-transform: uppercase;
@@ -167,9 +167,19 @@
     }
   }
 
-  .user{
-    color: blueviolet;
+  .User{
+    color: white;
     margin: 1rem;
+    font-size: 1rem;
+    background-color: blueviolet;
+    border-radius: 10px;
+    padding: .8rem;
+  }
+  .usertype{
+    color: white;
+    border-radius: 10px;
+    background-color: blueviolet;
+    margin-top: .5rem;
     font-size: 1rem;
   }
   

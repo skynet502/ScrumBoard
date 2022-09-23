@@ -6,6 +6,7 @@ import NavBar from './../nav copy/Navbar';
 import MyTasks from '../Tasks/MyTasks';
 import  AddTask  from './AddTask';
 import Users from '../Users/Users';
+import axios from 'axios';
 
 export class ScrumBoard extends Component {
 
@@ -36,6 +37,16 @@ export class ScrumBoard extends Component {
     })
   }
 
+  componentDidMount(){
+    axios.get("http://liveapi.chatscrum.com/scrum/api/scrumgoals")
+    .then(res => {
+      console.log(res)
+      this.setState({
+        tasks:res.data,
+      })
+    })
+  }
+
  
   render() {
     console.log('logged in as ', Data.fullname)
@@ -43,14 +54,6 @@ export class ScrumBoard extends Component {
     return (
       <div className='scrumboard'>
       <NavBar />
-        <nav>
-            <h1>CHATSCRUM</h1>
-            <div className='var'>
-                <p>User Type: {Data.usertype}</p>
-                <p>Project Name:{ Data.projectname}</p>
-            </div>
-        </nav>
-
         <p id='info'>Hello {Data.fullname}, Welcome to your scrumboard</p>
 
         <MyTasks data={this.state.tasks} deleteTask={this.deleteTask} />
