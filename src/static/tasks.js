@@ -1,24 +1,25 @@
 const taskList = [
-    {
+   {
         id:1,
         item:'build Something'
     },
     {
         id:2,
-        item:'build Something'
+        item:'Play with it'
     },
     {
         id:3,
-        item:'build Something'
+        item:'Update the app'
     },
     {
         id:4,
-        item:'build Something'
+        item:'Reorder the goals'
     },
     {
         id:5,
-        item:'build Something'
+        item:'Plus ultra'
     }
 ]
+
 
 export default taskList

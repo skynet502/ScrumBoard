@@ -4,46 +4,39 @@ import formInput from '../../static/formData'
 import './ScrumBoard.css'
 import NavBar from './../nav copy/Navbar';
 import MyTasks from '../Tasks/MyTasks';
+import  AddTask  from './AddTask';
+import Users from '../Users/Users';
 
 export class ScrumBoard extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props);
     
     this.state={
         data:formInput,
         isOpen:false,
-        tasks:null
+        tasks:[]
     }
   }
 
-  openModal=()=>{
+  addTask=(task) => {
+    task.id = Math.random().toString(36).slice(2,9)
+    let tasks = [...this.state.tasks, task]
     this.setState({
-        isOpen:true
+      tasks
+  })
+  }
+
+  deleteTask = (id) => {
+    const tasks = this.state.tasks.filter(task =>{
+      return task.id !== id
+    })
+    this.setState({
+      tasks
     })
   }
 
-  closeModal=()=>{
-    this.setState({
-        isOpen:false
-    })
-  }
-
-  handleChange=(e)=>{
-    this.setState({
-        tasks:e.target.value
-    })
-  }
-
-  handleSubmit=(e)=>{
-    e.preventDefault();
-    this.setState({
-        isOpen:false
-    })
-  }
-
-
-
+ 
   render() {
     console.log('logged in as ', Data.fullname)
 
@@ -60,20 +53,12 @@ export class ScrumBoard extends Component {
 
         <p id='info'>Hello {Data.fullname}, Welcome to your scrumboard</p>
 
-        <MyTasks />
+        <MyTasks data={this.state.tasks} deleteTask={this.deleteTask} />
 
-        <div id='modal' className={this.state.isOpen ? "show" : "hidden"}>
-            <div className='header'>
-                <h3>Add a new task</h3>
-                <h3 id='close' onClick={()=>this.closeModal()}>X</h3>
-            </div>
+        <AddTask addTask={this.addTask} />
 
-            <form onSubmit={this.handleSubmit}> 
-                <input type='text' onChange={this.handleChange} />
-                <button>Confirm</button>
-            </form>
-        </div>
-        <button className='add' onClick={() => this.openModal()}>ADD TASK</button>
+        <Users />
+
       </div>
     )
   }
